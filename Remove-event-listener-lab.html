@@ -1,0 +1,35 @@
+<! --In this lab, you will practice the usage of the element.removeEventListener() function. 
+The goal is to create an HTML file with a button and a paragraph. When the button is clicked for the first time, the paragraph's text should change to 'Button clicked once'. After the first click, the button should not respond to any other clicks. To achieve this, you will have to use the element.removeEventListener() function.
+Here's the outline of the tasks:
+Create a button with id btn.
+Create a paragraph with id paragraph and initial text 'Not clicked'.
+Write a JavaScript function that modifies the paragraph's text and removes the click event listener from the button.
+Important concepts
+Add event listeners using element.addEventListener().
+Remove event listeners using element.removeEventListener().-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Remove Event Listener Lab</title>
+	</head>
+	<body>
+		<!-- Add the button and paragraph here -->
+		<button id='btn'>Click me!</button>
+		<p id="paragraph">Not clicked</p>
+		<script src="script.js"></script>
+	</body>
+</html>
+
+
+const handleClick = () => {
+    message.textContent = "Button clicked once";
+    button.removeEventListener('click', handleClick);
+}
+
+const button = document.getElementById('btn').addEventListener('click', handleClick);
+const message = document.getElementById('paragraph');
+
+
+
+
