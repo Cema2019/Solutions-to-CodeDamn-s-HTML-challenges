@@ -17,18 +17,20 @@ Remove event listeners using element.removeEventListener().-->
 		<!-- Add the button and paragraph here -->
 		<button id='btn'>Click me!</button>
 		<p id="paragraph">Not clicked</p>
-		<script src="script.js"></script>
+
+		<script>
+			const handleClick = () => {
+				message.textContent = "Button clicked once";
+				button.removeEventListener('click', handleClick);
+			}
+
+			const button = document.getElementById('btn');
+			const message = document.getElementById('paragraph');
+			button.addEventListener('click', handleClick);
+		</script>
 	</body>
 </html>
 
-
-const handleClick = () => {
-    message.textContent = "Button clicked once";
-    button.removeEventListener('click', handleClick);
-}
-
-const button = document.getElementById('btn').addEventListener('click', handleClick);
-const message = document.getElementById('paragraph');
 
 
 
